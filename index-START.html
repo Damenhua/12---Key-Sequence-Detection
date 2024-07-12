@@ -8,7 +8,23 @@
   </head>
   <body>
     <script>
-      
+      const secretCode = [65,80,80,76,69];
+      let inputAry = [];
+
+      function codeHandler(e) {
+        while(inputAry.length >= secretCode.length) {
+          inputAry.shift()
+        }
+        console.log(e.keyCode);
+        inputAry.push(e.keyCode);
+        console.log(inputAry);
+        if(JSON.stringify(secretCode) === JSON.stringify(inputAry)){
+          cornify_add();
+        }
+      }
+
+
+      window.addEventListener("keyup",codeHandler)
     </script>
   </body>
 </html>
